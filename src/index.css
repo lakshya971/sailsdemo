@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delius&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+/* GSAP Smooth Scrolling Styles */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+  min-height: 100vh;
+}
+
+/* Optimized Marquee Animation */
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-smooth-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-marquee-smooth {
+  animation: marquee-smooth 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.animate-marquee-smooth-reverse {
+  animation: marquee-smooth-reverse 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Legacy animations for backward compatibility */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 20s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse var(--duration, 20s) linear infinite;
+}
+

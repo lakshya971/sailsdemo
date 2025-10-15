@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Play, Zap, Globe, TrendingUp, Star, ChevronDown } from 'lucide-react';
 import Button from '../components/ui/Button';
-import { MarqueeDemo } from '../components/ui/marquee';
+import { MarqueeDemo } from '../components/ui/Marquee';
 import Footer from '../components/Footer';
 import { DottedMap } from '../components/ui/DottedMap';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
